@@ -1,0 +1,55 @@
+---
+const CATEGORIES = [
+  {
+    name: "Newborns",
+    image: "public/baby-born.jpg",
+  },
+  {
+    name: "Toddlers",
+    image: "/docs/images/products/apple-watch.png",
+  },
+  {
+    name: "Kids",
+    image: "/docs/images/products/apple-watch.png",
+  },
+  {
+    name: "Teens",
+    image: "/docs/images/products/apple-watch.png",
+  },
+  {
+    name: "Adults",
+    image: "/docs/images/products/apple-watch.png",
+  },
+  {
+    name: "Seniors",
+    image: "/docs/images/products/apple-watch.png",
+  },
+];
+---
+
+<section class="flex flex-col items-center mt-20">
+  <h2 class="text-4xl font-bold">Categories</h2>
+
+  <span class="mt-10 grid grid-cols-3 gap-5">
+    {
+      CATEGORIES.map((category) => (
+        <div class="bg-gray-50 w-full max-w-xs border border-gray-200 rounded-lg">
+          <div class="flex flex-col justify-center items-center p-5">
+            <a href="#">
+              <h5 class="text-xl font-semibold tracking-tight">
+                {category.name}
+              </h5>
+            </a>
+          </div>
+          <a href="#">
+            <img
+              class="p-2 rounded-xl w-full object-cover"
+              src={category.image}
+              alt="Category image"
+            />
+          </a>
+        </div>
+      ))
+    }
+  </span>
+</section>
