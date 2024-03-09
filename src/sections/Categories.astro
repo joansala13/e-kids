@@ -1,28 +1,29 @@
 ---
+import CategoriesCard from "@components/CategoriesCard.astro";
 const CATEGORIES = [
   {
     name: "Newborns",
-    image: "public/baby-born.jpg",
+    image: "public/newborn.png",
   },
   {
     name: "Toddlers",
-    image: "/docs/images/products/apple-watch.png",
+    image: "public/toddlers.png",
   },
   {
     name: "Kids",
-    image: "/docs/images/products/apple-watch.png",
+    image: "public/kid.png",
   },
   {
     name: "Teens",
-    image: "/docs/images/products/apple-watch.png",
+    image: "public/teens.png",
   },
   {
     name: "Adults",
-    image: "/docs/images/products/apple-watch.png",
+    image: "public/adults.png",
   },
   {
     name: "Seniors",
-    image: "/docs/images/products/apple-watch.png",
+    image: "public/seniors.png",
   },
 ];
 ---
@@ -30,25 +31,10 @@ const CATEGORIES = [
 <section class="flex flex-col items-center mt-20">
   <h2 class="text-4xl font-bold">Categories</h2>
 
-  <span class="mt-10 grid grid-cols-3 gap-5">
+  <span class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
     {
       CATEGORIES.map((category) => (
-        <div class="bg-gray-50 w-full max-w-xs border border-gray-200 rounded-lg">
-          <div class="flex flex-col justify-center items-center p-5">
-            <a href="#">
-              <h5 class="text-xl font-semibold tracking-tight">
-                {category.name}
-              </h5>
-            </a>
-          </div>
-          <a href="#">
-            <img
-              class="p-2 rounded-xl w-full object-cover"
-              src={category.image}
-              alt="Category image"
-            />
-          </a>
-        </div>
+        <CategoriesCard name={category.name} image={category.image} />
       ))
     }
   </span>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  name: string;
+  image: string;
+}
+
+const { name, image } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center justify-between p-5 bg-gray-50 w-full max-w-xs border border-gray-200 rounded-lg"
+>
+  <span>
+    <a href="#">
+      <h5 class="text-xl font-semibold tracking-tight">
+        {name}
+      </h5>
+    </a>
+  </span>
+  <img
+    class="p-2 rounded-xl w-1/4 object-cover"
+    src={image}
+    alt="Category image"
+  />
+</div>
